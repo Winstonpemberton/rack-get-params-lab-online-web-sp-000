@@ -18,6 +18,7 @@ class Application
       end
       @@cart.each do |item|
         resp.write "#{item}\n"
+      end
 
     elsif req.path.match(/search/)
       search_term = req.params["q"]
@@ -33,8 +34,6 @@ class Application
       end
 
     else
-
-
       resp.write "Path Not Found"
     end
     resp.finish
